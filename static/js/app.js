@@ -1,4 +1,7 @@
+//Set URL Address to 'url' as a constant
 const url = "https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json";
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Set up initial Screen Output
 function init(){ 
@@ -33,65 +36,66 @@ function init(){
 // Make Demographics Panel
 function ID_Demographics(ID_Value) {
 
- // Pull Json data
+    // Pull Json data
     d3.json(url).then((data) => {   
         console.log(data);
-    
-
+       
+   
         // Set MetaData to Array of data.metadata
         let MetaData = data.metadata;
-        
+           
         // Set Selected_MetaData to filtered MetaData by matching ID Values
         let Selected_MetaData = MetaData.filter((Data) => Data.id == ID_Value);
-      
+         
         // Set Selected_ID to key in the filtered MetaData
-        let Selected_ID = Selected_MetaData[0]
-        
+        let Selected_Item = Selected_MetaData[0]
+           
         // Clear out previous output
         d3.select("#sample-metadata").html("");
-  
+     
         // Set MetaData_Info to hold the variables of chosen ID
-        let MetaData_Info = Object.entries(Selected_ID);
-        
-        // Loop through MetaData array info and output data
+        let MetaData_Info = Object.entries(Selected_Item);
+           
+        // Loop through MetaData for chosen ID and output data
         MetaData_Info.forEach(([id,info]) => {                     
-            d3.select("#sample-metadata").append("h5").text(`${id}: ${info}`);
-        });
+           d3.select("#sample-metadata").append("h5").text(`${id}: ${info}`);
+           });
     });
-  }
+}
   
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Make Bar Chart
 function Bar_Chart(ID_Value) {
-    // Fetch the JSON data and console log it
+
+    // Pull Json data
     d3.json(url).then((data) => {
         console.log(data);
 
-        // An array of sample objects
+        // Set samples as on array of data.samples objects
         let samples = data.samples;
 
-        // Filter data where id = selected value 
-        let filteredData = samples.filter((sample) => sample.id === ID_Value);
+        // Filter data and save as 'Selected_ID' where sample.id = user selected ID_Value which was passed in as parameter
+        let Selected_ID = samples.filter((sample) => sample.id === ID_Value);
 
-        // Assign the first object to obj variable
-        let obj = filteredData[0];
+        // Assign first item to 'Selected_Item' for use in Bar Chart creation 
+        let Selected_Item = Selected_ID[0];
         
-        // Trace for the data for the horizontal bar chart
-        let trace = [{
-            // Slice the top 10 otus
-            x: obj.sample_values.slice(0,10).reverse(),
-            y: obj.otu_ids.slice(0,10).map((otu_id) => `OTU ${otu_id}`).reverse(),
-            text: obj.otu_labels.slice(0,10).reverse(),
+        // Assemble 'trace' for Bar Chart
+        let trace = {
+            // Slice first 10 otu values and arrange in decenting order
+            x: Selected_Item.sample_values.slice(0,10).reverse(),
+            y: Selected_Item.otu_ids.slice(0,10).map((otu_id) => `OTU ${otu_id}`).reverse(),
+            text: Selected_Item.otu_labels.slice(0,10).reverse(),
             type: "bar",
-            marker: {
-                color: "rgb(166,172,237)"
-            },
             orientation: "h"
-        }];
+        };
+
+        // Assign 'Bar_Data' to trace array
+        let Bar_Data = [trace];
         
-        // Use Plotly to plot the data in a bar chart
-        Plotly.newPlot("bar", trace);
+        // Use Plotly to create Bar Chart
+        Plotly.newPlot("bar", Bar_Data);
     });
 }
 
@@ -99,45 +103,48 @@ function Bar_Chart(ID_Value) {
 
 // Make Bubble Chart
 function Bubble_Chart(ID_Value) {
-    // Fetch the JSON data and console log it
+
+    // Pull Json data
     d3.json(url).then((data) => {
         console.log(data);
 
-        // An array of sample objects
+        // Set samples as on array of data.samples objects
         let samples = data.samples;
     
-        // Filter data where id = selected value 
-        let filteredData = samples.filter((sample) => sample.id === ID_Value);
+        // Filter data and save as 'Selected_ID' where sample.id = user selected ID_Value which was passed in as parameter
+        let Selected_ID = samples.filter((sample) => sample.id === ID_Value);
     
-        // Assign the first object to obj variable
-        let obj = filteredData[0];
+        // Assign first item to 'Selected_Item' for use in Bubble Chart creation 
+        let Selected_Item = Selected_ID[0];
         
-        // Trace for the data for the bubble chart
-        let trace = [{
-            x: obj.otu_ids,
-            y: obj.sample_values,
-            text: obj.otu_labels,
+        // Assemble 'trace' for Bubble Chart
+        let trace = {
+            x: Selected_Item.otu_ids,
+            y: Selected_Item.sample_values,
             mode: "markers",
             marker: {
-                size: obj.sample_values,
-                color: obj.otu_ids,
-                colorscale: "Sunset"
-            }
-        }];
+                size: Selected_Item.sample_values,
+                color: Selected_Item.otu_ids,
+            },
+            text: Selected_Item.otu_labels
+        };
     
-        // Apply the x-axis lengend to the layout
+        // Assign 'Bubble_Data' to trace array
+        let Bubble_Data = [trace];
+
+        // Assign 'layout' to hold title and place it below Bubble Chart 
         let layout = {
             xaxis: {title: "OTU ID"}
         };
     
-        // Use Plotly to plot the data in a bubble chart
-        Plotly.newPlot("bubble", trace, layout);
+        // Use Plotly to create Bubble Chart
+        Plotly.newPlot("bubble", Bubble_Data, layout);
     });
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// //define the function when the dropdown detects a change (function name as defined in index.html)
+// Create Handler for when the DropDown Target changes 
 function optionChanged(New_ID){
 
     ID_Demographics(New_ID);
