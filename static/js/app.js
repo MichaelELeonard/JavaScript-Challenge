@@ -1,5 +1,5 @@
 //Set URL Address to 'url' as a constant
-const url = "https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json";
+const url = 'https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json';
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -10,24 +10,24 @@ function init(){
     d3.json(url).then((data) => {   
         console.log(data);
 
-    // Set Drop_Down_Menu variable to DropDown on Webpage    
-    let Drop_Down_Menu = d3.select("#selDataset");
+        // Set Drop_Down_Menu variable to DropDown on Webpage    
+        let Drop_Down_Menu = d3.select('#selDataset');
      
-    // Set Subject_ID_Numbers to Array of ID Numbers labeled names
-    let Subject_ID_Numbers = data.names;
+        // Set Subject_ID_Numbers to Array of ID Numbers labeled names
+        let Subject_ID_Numbers = data.names;
          
-    // Loop through Subject_ID_Numbers and append each ID to the DropDown Menu
-    Subject_ID_Numbers.forEach((ID_Number) => {                //from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach 
-        Drop_Down_Menu.append("option").text(ID_Number).property("value");
-        });
+        // Loop through Subject_ID_Numbers and append each ID to the DropDown Menu
+        Subject_ID_Numbers.forEach((ID_Number) => {           //from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach 
+            Drop_Down_Menu.append('option').text(ID_Number).property('value');
+            });
       
-    // Set First_ID to the first ID value in Subject_ID_Numbers Array    
-    let First_ID = Subject_ID_Numbers[0];    
+        // Set First_ID to the first ID value in Subject_ID_Numbers Array    
+        let First_ID = Subject_ID_Numbers[0];    
   
-    // Pass First First_ID to functions for initial output
-    ID_Demographics(First_ID)
-    Bar_Chart(First_ID)
-    Bubble_Chart(First_ID)
+        // Pass First First_ID to functions for initial output
+        ID_Demographics(First_ID)
+        Bar_Chart(First_ID)
+        Bubble_Chart(First_ID)
     });
 };
 
@@ -51,14 +51,14 @@ function ID_Demographics(ID_Value) {
         let Selected_Item = Selected_MetaData[0]
            
         // Clear out previous output
-        d3.select("#sample-metadata").html("");
+        d3.select('#sample-metadata').html('');
      
         // Set MetaData_Info to hold the variables of chosen ID
-        let MetaData_Info = Object.entries(Selected_Item);
+        let MetaData_Info = Object.entries(Selected_Item);    //from https://stackoverflow.com/questions/684672/how-do-i-loop-through-or-enumerate-a-javascript-object/684692#684692
            
         // Loop through MetaData for chosen ID and output data
         MetaData_Info.forEach(([id,info]) => {                     
-           d3.select("#sample-metadata").append("h5").text(`${id}: ${info}`);
+           d3.select('#sample-metadata').append('h6').text(`${id}: ${info}`);
            });
     });
 }
@@ -73,10 +73,10 @@ function Bar_Chart(ID_Value) {
         console.log(data);
 
         // Set samples as on array of data.samples objects
-        let samples = data.samples;
+        let Data_Samples = data.samples;
 
         // Filter data and save as 'Selected_ID' where sample.id = user selected ID_Value which was passed in as parameter
-        let Selected_ID = samples.filter((sample) => sample.id === ID_Value);
+        let Selected_ID = Data_Samples.filter((Data_Samples) => Data_Samples.id === ID_Value);
 
         // Assign first item to 'Selected_Item' for use in Bar Chart creation 
         let Selected_Item = Selected_ID[0];
@@ -87,15 +87,15 @@ function Bar_Chart(ID_Value) {
             x: Selected_Item.sample_values.slice(0,10).reverse(),
             y: Selected_Item.otu_ids.slice(0,10).map((otu_id) => `OTU ${otu_id}`).reverse(),
             text: Selected_Item.otu_labels.slice(0,10).reverse(),
-            type: "bar",
-            orientation: "h"
+            type: 'bar',
+            orientation: 'h'
         };
 
         // Assign 'Bar_Data' to trace array
         let Bar_Data = [trace];
         
         // Use Plotly to create Bar Chart
-        Plotly.newPlot("bar", Bar_Data);
+        Plotly.newPlot('bar', Bar_Data);
     });
 }
 
@@ -109,10 +109,10 @@ function Bubble_Chart(ID_Value) {
         console.log(data);
 
         // Set samples as on array of data.samples objects
-        let samples = data.samples;
+        let Data_Samples = data.samples;
     
         // Filter data and save as 'Selected_ID' where sample.id = user selected ID_Value which was passed in as parameter
-        let Selected_ID = samples.filter((sample) => sample.id === ID_Value);
+        let Selected_ID = Data_Samples.filter((Data_Samples) => Data_Samples.id === ID_Value);
     
         // Assign first item to 'Selected_Item' for use in Bubble Chart creation 
         let Selected_Item = Selected_ID[0];
@@ -121,7 +121,7 @@ function Bubble_Chart(ID_Value) {
         let trace = {
             x: Selected_Item.otu_ids,
             y: Selected_Item.sample_values,
-            mode: "markers",
+            mode: 'markers',                          //from https://stackoverflow.com/questions/77179677/adding-hover-text-over-bubble-chart-in-plotly-js
             marker: {
                 size: Selected_Item.sample_values,
                 color: Selected_Item.otu_ids,
@@ -134,11 +134,11 @@ function Bubble_Chart(ID_Value) {
 
         // Assign 'layout' to hold title and place it below Bubble Chart 
         let layout = {
-            xaxis: {title: "OTU ID"}
+            xaxis: {title: 'OTU ID'}          //from https://plotly.com/javascript/axes/
         };
     
         // Use Plotly to create Bubble Chart
-        Plotly.newPlot("bubble", Bubble_Data, layout);
+        Plotly.newPlot('bubble', Bubble_Data, layout);
     });
 }
 
