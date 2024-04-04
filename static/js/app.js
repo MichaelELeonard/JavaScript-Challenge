@@ -121,12 +121,12 @@ function Bubble_Chart(ID_Value) {
         let trace = {
             x: Selected_Item.otu_ids,
             y: Selected_Item.sample_values,
+            text: Selected_Item.otu_labels,
             mode: 'markers',                          //from https://stackoverflow.com/questions/77179677/adding-hover-text-over-bubble-chart-in-plotly-js
             marker: {
                 size: Selected_Item.sample_values,
                 color: Selected_Item.otu_ids,
             },
-            text: Selected_Item.otu_labels
         };
     
         // Assign 'Bubble_Data' to trace array
