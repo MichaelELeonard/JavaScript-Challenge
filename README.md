@@ -37,6 +37,6 @@ A D3 library was used to read in samples.json from the URL https://static.bc-edx
 <img src="Pics/Metadata Dropdown.png" width="174" height="532"><img src="Pics/940 Metadata.png" width="212" height="404">
 
 
-## Full Dashboard
+## Full Dashboard View
 <img src="Pics/Full Dashboard.png" width="987" height="803">
 
