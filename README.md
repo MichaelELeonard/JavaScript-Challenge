@@ -16,27 +16,24 @@ Use the D3 library to read in samples.json from the URL https://static.bc-edx.co
 
 ## Visualizations
 ### Horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual
-* Use sample_values as the values for the bar chart.
-* Use otu_ids as the labels for the bar chart.
-* Use otu_labels as the hovertext for the chart.
+* OTU _ids as the labels for the bar chart.
+* OTU _labels as the hovertext for the chart.
 
 <img src="Pics/940 Bar Chart.png" width="454" height="321">
 
 
 ### Bubble chart that displays each sample
-* Use otu_ids for the x values.
-* Use sample_values for the y values.
-* Use sample_values for the marker size.
-* Use otu_ids for the marker colors.
-* Use otu_labels for the text values.
+* OTU_ids for the x values.
+* OTU sample_values for the y values.
+* OTU sample_values for the marker size.
+* OTU ids for the marker colors.
+* OTU _labels for the text values.
 
 <img src="Pics/940 Bubble Chart.png" width="1195" height="348">
 
 
 
 ### Metadata, i.e., an individual's demographic information
-* Append an html tag with that text to the #sample-metadata panel.
-
 <img src="Pics/940 Metadata.png" width="212" height="404">
 
 
