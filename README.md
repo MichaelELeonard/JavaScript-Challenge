@@ -29,7 +29,7 @@ Use the D3 library to read in samples.json from the URL https://static.bc-edx.co
 * OTU ids for the marker colors.
 * OTU _labels for the text values.
 
-<img src="Pics/940 Bubble Chart popup.png" width="806" height="249">
+<img src="Pics/940 Bubble Chart popup.png" width="1047" height="323">
 
 
 
