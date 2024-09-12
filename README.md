@@ -15,14 +15,14 @@ The dataset reveals that a small handful of microbial species (also called opera
 A D3 library was used to read in samples.json from the URL https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json
 
 ## Dashboard Visualization Components
-### Horizontal bar chart with a dropdown menu to display the top 10 OTUs found in Subject ID’s Bellybutton 
+### * Horizontal bar chart with a dropdown menu to display the top 10 OTUs found in Subject ID’s Bellybutton 
 * OTU _ids used as the labels for the bar chart.
 * OTU _labels used as the hovertext for the chart.
 
 <img src="Pics/940 Bar Chart popup.png" width="497" height="331">
 
 
-### Bubble chart that displays each sample’s data
+### * Bubble chart that displays each sample’s data
 * OTU_ids used for the x values.
 * OTU sample_values used for the y values.
 * OTU sample_values used for the marker size.
@@ -33,7 +33,7 @@ A D3 library was used to read in samples.json from the URL https://static.bc-edx
 
 
 
-### Metadata, i.e., an individual's demographic information
+### * Metadata, i.e., an individual's demographic information
 !<img src="Pics/Metadata Dropdown.png" width="174" height="532"> !<img src="Pics/940 Metadata.png" width="212" height="404">
 
 
