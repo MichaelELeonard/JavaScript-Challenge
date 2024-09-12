@@ -40,5 +40,5 @@ Use the D3 library to read in samples.json from the URL https://static.bc-edx.co
 
 ## Full Dashboard
 
-<img src="Pics/Full Dashboard 2.png" width="789" height="642">
+<img src="Pics/Full Dashboard 3.png" width="888" height="722">
 
