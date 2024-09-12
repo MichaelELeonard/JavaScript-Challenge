@@ -16,18 +16,18 @@ A D3 library was used to read in samples.json from the URL https://static.bc-edx
 
 ## Visualizations
 ### Horizontal bar chart with a dropdown menu to display the top 10 OTUs found in Subject ID’s Bellybutton 
-* OTU _ids as the labels for the bar chart.
-* OTU _labels as the hovertext for the chart.
+* OTU _ids used as the labels for the bar chart.
+* OTU _labels used as the hovertext for the chart.
 
 <img src="Pics/940 Bar Chart popup.png" width="497" height="331">
 
 
 ### Bubble chart that displays each sample’s data
-* OTU_ids for the x values.
-* OTU sample_values for the y values.
-* OTU sample_values for the marker size.
-* OTU ids for the marker colors.
-* OTU _labels for the text values.
+* OTU_ids used for the x values.
+* OTU sample_values used for the y values.
+* OTU sample_values used for the marker size.
+* OTU ids used for the marker colors.
+* OTU _labels used for the text values.
 
 <img src="Pics/940 Bubble Chart popup.png" width="906" height="285">
 
