@@ -19,7 +19,7 @@ Use the D3 library to read in samples.json from the URL https://static.bc-edx.co
 * OTU _ids as the labels for the bar chart.
 * OTU _labels as the hovertext for the chart.
 
-<img src="Pics/940 Bar Chart.png" width="454" height="321">
+<img src="Pics/940 Bar Chart popup.png" width="497" height="331">
 
 
 ### Bubble chart that displays each sample
@@ -29,7 +29,7 @@ Use the D3 library to read in samples.json from the URL https://static.bc-edx.co
 * OTU ids for the marker colors.
 * OTU _labels for the text values.
 
-<img src="Pics/940 Bubble Chart.png" width="1195" height="348">
+<img src="Pics/940 Bubble Chart popup.png" width="806" height="249">
 
 
 
