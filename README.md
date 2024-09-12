@@ -23,7 +23,7 @@ Use the D3 library to read in samples.json from the URL https://static.bc-edx.co
 <img src="Pics/940 Bar Chart.png" width="454" height="321">
 
 
-###  Bubble chart that displays each sample.
+### Bubble chart that displays each sample
 •	Use otu_ids for the x values.
 •	Use sample_values for the y values.
 •	Use sample_values for the marker size.
@@ -34,7 +34,7 @@ Use the D3 library to read in samples.json from the URL https://static.bc-edx.co
 
 
 
-### Metadata, i.e., an individual's demographic information.
+### Metadata, i.e., an individual's demographic information
 •	Loop through each key-value pair from the metadata JSON object and create a text string.
 •	Append an html tag with that text to the #sample-metadata panel.
 
