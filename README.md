@@ -38,5 +38,5 @@ A D3 library was used to read in samples.json from the URL https://static.bc-edx
 
 
 # Full Dashboard View
-<img src="Pics/Full Dashboard.png" width="888" height="772">
+<img src="Pics/Full Dashboard.png" width="937" height="762">
 
