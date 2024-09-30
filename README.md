@@ -3,8 +3,7 @@
 
 # JavaScript Challenge
 
-JavaScript Code - https://github.com/MichaelELeonard/JavaScript-Challenge/blob/main/static/js/app.js
-
+[JavaScript Code Link]( https://github.com/MichaelELeonard/JavaScript-Challenge/blob/main/static/js/app.js)
 
 ## Background
 In this assignment, we were tasked to build an interactive dashboard to explore the Belly Button Biodiversity dataset, which catalogs the microbes that colonize human navels.
@@ -12,7 +11,9 @@ The dataset reveals that a small handful of microbial species (also called opera
 
 
 ## Data
-A D3 library was used to read in samples.json from the URL https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json
+
+A D3 library was used to read in [samples.json]( https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json)
+
 
 # Dashboard Visualization Components
 ### Horizontal bar chart with a dropdown menu to display the top 10 OTUs found in Subject ID’s Bellybutton 
