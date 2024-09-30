@@ -16,6 +16,11 @@ A D3 library was used to read in data from [samples.json]( https://static.bc-edx
 
 
 # Dashboard Visualization Components
+
+### Sample’s metadata is displayed based on dropdown selection
+<img src="Pics/Metadata Dropdown.png" width="174" height="532"><img src="Pics/940 Metadata.png" width="212" height="404">
+
+
 ### A horizontal bar chart with a dropdown menu was established to display the top 10 OTUs found in Subject ID’s Bellybutton 
 * OTU _ids used as the labels for the bar chart.
 * OTU _labels used as the hovertext for the chart.
@@ -31,12 +36,6 @@ A D3 library was used to read in data from [samples.json]( https://static.bc-edx
 * OTU _labels used for the text values.
 
 <img src="Pics/940 Bubble Chart popup.png" width="906" height="285">
-
-
-
-### Sample’s metadata is displayed based on dropdown selection
-<img src="Pics/Metadata Dropdown.png" width="174" height="532"><img src="Pics/940 Metadata.png" width="212" height="404">
-
 
 # Full Dashboard View
 <img src="Pics/Full Dashboard.png" width="987" height="803">
