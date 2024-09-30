@@ -34,7 +34,7 @@ A D3 library was used to read in data from [samples.json]( https://static.bc-edx
 
 
 
-### Metadata, i.e., an individual's demographic information
+### Sample’s metadata is displayed based on dropdown selection
 <img src="Pics/Metadata Dropdown.png" width="174" height="532"><img src="Pics/940 Metadata.png" width="212" height="404">
 
 
