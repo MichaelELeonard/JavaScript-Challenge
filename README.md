@@ -23,7 +23,7 @@ A D3 library was used to read in data from [samples.json]( https://static.bc-edx
 <img src="Pics/940 Bar Chart popup.png" width="497" height="331">
 
 
-### Bubble chart that displays each sample’s data
+### A bubble chart displays each sample’s data
 * OTU_ids used for the x values.
 * OTU sample_values used for the y values.
 * OTU sample_values used for the marker size.
