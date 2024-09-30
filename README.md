@@ -12,7 +12,7 @@ The dataset reveals that a small handful of microbial species (also called opera
 
 ## Data
 
-A D3 library was used to read in [samples.json]( https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json)
+A D3 library was used to read in data from [samples.json]( https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json)
 
 
 # Dashboard Visualization Components
