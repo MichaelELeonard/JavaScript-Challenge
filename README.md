@@ -16,7 +16,7 @@ A D3 library was used to read in data from [samples.json]( https://static.bc-edx
 
 
 # Dashboard Visualization Components
-### Horizontal bar chart with a dropdown menu to display the top 10 OTUs found in Subject ID’s Bellybutton 
+### A Horizontal bar chart with a dropdown menu was established to display the top 10 OTUs found in Subject ID’s Bellybutton 
 * OTU _ids used as the labels for the bar chart.
 * OTU _labels used as the hovertext for the chart.
 
