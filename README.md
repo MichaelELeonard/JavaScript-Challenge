@@ -38,5 +38,5 @@ A D3 library was used to read in data from [samples.json]( https://static.bc-edx
 <img src="Pics/940 Bubble Chart popup.png" width="906" height="285">
 
 # Full Dashboard View
-<img src="Pics/Full Dashboard.png" width="987" height="803">
+<img src="Pics/Full Dashboard.png" width="888" height="722">
 
